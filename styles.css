@@ -1,68 +1,451 @@
+/* Ensure all elements use border-box sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+/* Body styling */
 body {
-    background: #f5d9d5;
-    font-family: "Nunito", sans-serif;
-}
-
-.blurb h2 {
-   color: #EA1C2C;
-   font-weight: 100;
-   font-size: 2.5rem;
-}
-
-.blurb p {
-    color: #f498b8;
-    font-weight: 100;
-    font-size: 1.125rem;
-    line-height: 2;
-}
-
-.content {
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-
-#mainNavbar {
-    font-size: 1.5rem;
-    font-weight: 100;    
-}
-
-#mainNavbar .nav-link {
+    background: #141619;
     color: white;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
-#mainNavbar .nav-link:hover {
-    color: #EA1C2C;
+/* Navbar styling */
+.navbar {
+    background-color: rgba(20, 22, 25, 0.02);
+    padding: 10px 2px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensure navbar stays on top */
 }
 
-#mainNavbar .navbar-brand {
-    color: #EA1C2C;
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+}
+
+.nav-item a:hover {
+    color: #050A44;
+    font-weight: bold;
+}
+
+
+
+.nav-item.ml-auto a {
+    color: #0B21BF;
+    font-weight: bold;
+}
+
+.nav-item.ml-auto a:hover {
+    color: #ffffff;
+}
+
+.scrolled {
+    background-color: transparent !important;
+    transition: background 300ms ease-in-out;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Ensure the navbar toggler button has no border */
+.navbar-toggler {
+    border: none;
+}
+
+
+
+@media(max-width:800px) {
+
+    .navbar-collapse {
+        background-color: rgba(20, 22, 25, 0.9);
+    }
+
+    .nav-item a:focus,
+    .nav-item a:active {
+        color: white !important;
+    }
+
+    .nav-item a:hover {
+        color: #050A44;
+        font-weight: bold;
+    }
+
+    #linkedin {
+        margin-left: 2px;
+
+    }
+
+
+}
+
+
+
+
+
+/* Full-page sections */
+.hero-section,
+#short-summary,
+.projects {
+    height: 100vh;
+    /* Each section takes full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    /* Optional: For smooth scrolling */
+    padding: 20px;
+    /* Add padding to prevent content from touching edges */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background: linear-gradient(135deg, #0B21BF, #00FF88);
+    color: white;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
     font-size: 1.5rem;
+    margin-bottom: 40px;
 }
 
-#headingGroup span {
-    color: #EA1C2C;
+.hero-section .btn {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-section .btn-primary {
+    background-color: #ffffff;
+    color: #050A44;
+    border: none;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #050A44;
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+.hero-section .btn-outline {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.hero-section .btn-outline:hover {
+    background-color: #ffffff;
+    color: #050A44;
+    transform: translateY(-5px);
+}
+
+/* Short Summary Section */
+#short-summary {
+    background: #141619;
+    height: auto;
+    /* Allow height to adjust based on content */
+    padding: 60px 0;
+    /* Add padding to prevent overlap */
+}
+
+#short-sum {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+#id-profile-container img {
+    border-radius: 10px;
+    max-width: 100%;
+    /* Ensure image doesn't overflow */
+    height: auto;
 }
 
 #headingGroup h1 {
-    font-weight: 100;
-    font-size: 4rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.navbar.scrolled {
-    background: rgb(222,192,222);
-    transition: background 500ms;
+#headingGroup h3 {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
 }
 
-@media (max-width: 1200px) {
-    #headingGroup h1 {
-        font-weight: 100;
+/* Projects Section */
+.projects {
+    background: #1A1A1A;
+    height: auto;
+    /* Allow height to adjust based on content */
+    padding: 60px 0;
+    /* Add padding to prevent overlap */
+}
+
+.projects h1 {
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Card styling */
+.card {
+    background-color: #202020;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #0B21BF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #050A44;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-section h1 {
         font-size: 3rem;
     }
-    .blurb h2 {
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    #headingGroup h1 {
         font-size: 2rem;
+    }
+
+    #headingGroup h3 {
+        font-size: 1rem;
+    }
+
+    .projects h1 {
+        font-size: 2.5rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    #short-summary,
+    .projects {
+        height: auto;
+        /* Allow sections to grow based on content */
+        padding: 40px 0;
+        /* Add padding for smaller screens */
     }
 }
 
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
 
+    .hero-section p {
+        font-size: 1rem;
+    }
 
+    #headingGroup h1 {
+        font-size: 1.8rem;
+    }
 
+    #headingGroup h3 {
+        font-size: 0.9rem;
+    }
+
+    .projects h1 {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+    }
+
+    #short-summary,
+    .projects {
+        padding: 30px 0;
+        /* Add more padding for extra small screens */
+    }
+
+    .nav-item a {
+        padding: 6px 10px;
+    }
+}
+
+/* Certificates Section */
+.certificates {
+    background: #141619;
+    padding: 80px 0;
+}
+
+.certificates h1 {
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.certificate-card {
+    background-color: #202020;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.certificate-card h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.certificate-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.certificate-card .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.certificate-card .btn-primary {
+    background-color: #0B21BF;
+    border: none;
+    color: white;
+}
+
+.certificate-card .btn-primary:hover {
+    background-color: #ffffff;
+    color: #050A44;
+    transform: translateY(-5px);
+}
+
+/* Responsive design for certificates */
+@media (max-width: 768px) {
+    .certificates h1 {
+        font-size: 2.5rem;
+    }
+
+    .certificate-card h5 {
+        font-size: 1rem;
+    }
+
+    .certificate-card p {
+        font-size: 0.8rem;
+    }
+
+    .certificate-card .btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .certificates h1 {
+        font-size: 2rem;
+    }
+
+    .certificate-card h5 {
+        font-size: 0.9rem;
+    }
+
+    .certificate-card p {
+        font-size: 0.75rem;
+    }
+
+    .certificate-card .btn {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+}
