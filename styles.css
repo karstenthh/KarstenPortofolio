@@ -17,6 +17,8 @@ body {
     /* Prevent horizontal scroll */
 }
 
+
+
 /* Navbar styling */
 .navbar {
     background-color: rgba(20, 22, 25, 0.02);
@@ -448,4 +450,46 @@ body {
         font-size: 0.75rem;
         padding: 5px 10px;
     }
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Apply the animation when elements enter the viewport */
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(30px);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar background transition when scrolling */
+.navbar.scrolled {
+    background: rgba(20, 22, 25, 0.8) !important;
+    transition: background 0.3s ease-in-out;
+}
+
+.container .hidden {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    animation-fill-mode: none;
 }
