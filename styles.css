@@ -66,6 +66,87 @@ body {
 .navbar-toggler {
     border: none;
 }
+/* Footer Styling */
+footer {
+    background-color: #0B21BF; /* Deep blue consistent with your color scheme */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    border-top: 2px solid #050A44; /* subtle accent */
+    box-shadow: 0 -4px 10px rgba(11, 33, 191, 0.3);
+    margin-top: 60px;
+}
+
+footer .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: white;
+}
+
+footer .footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+footer .footer-links a:hover {
+    color: #00FF88; /* bright accent */
+}
+
+footer .footer-social {
+    margin-top: 15px;
+}
+
+footer .footer-social a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+footer .footer-social a:hover {
+    color: #00FF88;
+}
+
+footer small {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer .footer-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    footer .footer-links {
+        justify-content: center;
+    }
+}
 
 
 
