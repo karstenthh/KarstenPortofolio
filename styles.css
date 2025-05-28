@@ -68,7 +68,7 @@ body {
 }
 /* Footer Styling */
 footer {
-    background-color: #0B21BF; /* Deep blue consistent with your color scheme */
+    background-color: grey; /* Deep blue consistent with your color scheme */
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -85,6 +85,7 @@ footer .footer-container {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
 footer .footer-logo {
